@@ -20,5 +20,5 @@ public class TestData {
     static String date= "05";
     static String month= "May";
     static String year = "1989";
-    static String fileName = RandomGenerator.randomFile();
+    static String fileName ="src/test/resources/img/1.png";
 }
