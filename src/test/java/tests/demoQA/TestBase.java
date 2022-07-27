@@ -26,8 +26,7 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        String resolution = new String();
-        Configuration.browserSize =resolution;
+        Configuration.browserSize = "1920x1080";
         //   Configuration.remote = remoteSite;
     }
 
