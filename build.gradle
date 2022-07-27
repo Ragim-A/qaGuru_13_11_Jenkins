@@ -54,9 +54,5 @@ task owner_test(type: Test) {
     useJUnitPlatform {
         includeTags "owner"
     }
-    task connect_remote(type: Test) {
-        useJUnitPlatform {
-            includeTags "remote"
-        }
+
     }
-}
