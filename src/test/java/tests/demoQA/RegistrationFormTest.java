@@ -1,12 +1,15 @@
 package tests.demoQA;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 import static tests.demoQA.TestData.*;
 
 public class RegistrationFormTest extends TestBase {
+
     @Test
+    @Tag("owner")
     void successfulTest() {
 
         step("Open registrations form", () -> {

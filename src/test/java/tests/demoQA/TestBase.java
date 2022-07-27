@@ -9,6 +9,7 @@ import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import tests.properties.SystemPropertiesTests;
 
 public class TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
@@ -21,10 +22,13 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
+
+
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        String resolution = new String();
+        Configuration.browserSize =resolution;
+        //   Configuration.remote = remoteSite;
     }
 
     @AfterEach
