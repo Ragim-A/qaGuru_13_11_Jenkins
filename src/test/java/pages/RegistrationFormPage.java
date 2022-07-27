@@ -78,7 +78,7 @@ public class RegistrationFormPage {
         return this;
     }
     public RegistrationFormPage setFilename(String value){
-        $("#uploadPicture").uploadFromClasspath("/img/1.png/");
+        $("#uploadPicture").uploadFromClasspath("img/1.png/");
         return this;
     }
     public RegistrationFormPage checkResult (String key, String value) {
