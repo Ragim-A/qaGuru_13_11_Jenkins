@@ -41,7 +41,7 @@ public class RegistrationFormTest extends TestBase {
                     .checkResult("Date of Birth", date + " " + month + "," + year)
                     .checkResult("Subjects", subject)
                     .checkResult("Hobbies", hobbie)
-                    .checkResult("Picture", fileName)
+                    .checkResult("Picture", "1.png")
                     .checkResult("Address", adress)
                     .checkResult("State and City", state + " " + city);
 
