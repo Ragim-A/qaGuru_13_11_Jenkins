@@ -1,6 +1,8 @@
 package tests.demoQA;
 
 
+import config.CredentialsConfig;
+import org.aeonbits.owner.ConfigFactory;
 import pages.RegistrationFormPage;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,6 +20,11 @@ public class TestBase {
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
+        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+        String login = config.login();
+        String password = config.password();
+
+        String urlSelenoid = System.getProperty("selenoid", "selenoid.autotests.cloud/wd/hub");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
@@ -27,6 +34,8 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
+        Configuration.browserVersion = "101";
+        Configuration.remote = "https://" + login + ":" + password + "@" + urlSelenoid;
         //   Configuration.remote = remoteSite;
     }
 
