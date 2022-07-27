@@ -24,15 +24,15 @@ public class TestBase {
         String login = config.login();
         String password = config.password();
 
-        String urlSelenoid = System.getProperty("selenoid", "selenoid.autotests.cloud/wd/hub");
-        String browserSize = System.getProperty("resolution","800x600");
-        String version = System.getProperty("version","101");
         String browser = System.getProperty("browser","ie");
+        String browserSize = System.getProperty("resolution","800x600");
+        String browserVersion = System.getProperty("browserVersion","101");
+        String urlSelenoid = System.getProperty("selenoid", "selenoid.autotests.cloud/wd/hub");
 
         Configuration.browser = browser;
-        Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = browserSize;
-        Configuration.browserVersion = version;
+        Configuration.browserVersion = browserVersion;
+        Configuration.baseUrl = "https://demoqa.com";
         Configuration.remote = "https://" + login + ":" + password +"@" + urlSelenoid;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
