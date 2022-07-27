@@ -24,7 +24,11 @@ public class TestBase {
         String login = config.login();
         String password = config.password();
 
-        String urlSelenoid = System.getProperty("selenoid", "selenoid.autotests.cloud/wd/hub");
+        String urlSelenoid = "someurl";
+        String resolution = "800x600";
+        String browserver = "2";
+        String browser = "IE";
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
@@ -33,8 +37,9 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.browserVersion = "101";
+        Configuration.browserSize = resolution;
+        Configuration.browser=browser;
+        Configuration.browserVersion = browserver;
         Configuration.remote = "https://" + login + ":" + password + "@" + urlSelenoid;
         //   Configuration.remote = remoteSite;
     }
